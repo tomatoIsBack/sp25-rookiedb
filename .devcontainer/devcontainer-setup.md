@@ -42,11 +42,21 @@ Create a "New Dev Container":
 
 ![Screenshot - Select New Dev Container](../images/dc-2.png)
 
-Use the SSH address of the rookiedb repository for the relevant project and select the `devcontainer` branch. For example, a student with GitHub username `oski` working on Project 0 would use the repository SSH address `git@github.com:cs186-student/sp25-proj0-oski.git`:
+Use the HTTPS address of the rookiedb repository for the relevant project. For example, a student with GitHub username `oski` working on Project 0 would use the repository address `https://github.com/cs186-student/sp25-proj0-oski.git`:
 
-![Screenshot - Add Repository and Branch information](../images/dc-3.png)
+![Screenshot - Add Repository and Branch information](../images/dc-6.png)
 
-Click "Build Container and Continue" and wait for Docker to download and build the image.
+Click "Build Container and Continue" and wait for Docker to download and build the image (this will take a few minutes).
+
+### Troubleshooting
+
+#### GitHub Authentication
+
+GitHub [deprecated password-based authentication](https://github.blog/security/application-security/token-authentication-requirements-for-git-operations/) in July 2020, which means that your password no longer works for command-line authentication. If asked to authenticate your GitHub account via IntelliJ, create a [Personal Access Token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic), which you may use to set up each of your dev containers. Ensure that you save your token securely, as it cannot be accessed again via your account.
+
+#### SSH Repository URL
+
+If you're creating a dev container using the SSH URL instead of the HTTPS URL, you may need to run `ssh-add -k` locally to add your private SSH key to your device. You may run `ssh-add -l` to see the SSH keys currently on your device.
 
 ## Visual Studio Code (VS Code) (local)
 
@@ -60,6 +70,12 @@ A [GitHub Codespace](https://github.com/features/codespaces) runs the build cont
 
 Either open VS Code or the web-based editor for the repository, `https://github.dev/cs186-student/sp25-projX-username`, by navigating through `github.dev` instead of `github.com`.
 
-Select ![Remote Explorer](../images/dc-4.png) and click on "Create Codespace".
+Select ![Remote Explorer](../images/dc-4.png) and click on "Create Codespace."
 
 Please consult the documentation for latest pricing information. GitHub currently provides 120 core-hours (60 hours in the least-capable image) per month to all users for free. If you elect to run in this or another remote configuration, course staff may be unable to provide support.
+
+#
+
+CS 186 Spring 2025
+
+Authors: Chris Douglas, Janani Sriram
